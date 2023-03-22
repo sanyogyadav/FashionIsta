@@ -7,7 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AdminAuthComponent {
 
-  signUp(data:object):void{
-    console.log(data)
+  constructor() { }
+
+  signUp(admin: any) {
+    console.log("Name: " + admin.username + "Email: " + admin.email + "Password: " + admin.password);
   }
 }
