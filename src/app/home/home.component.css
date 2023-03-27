@@ -1,0 +1,18 @@
+.parent {
+    background-color: rgba(241, 246, 177, 0.288);
+    padding: 10px;
+    margin: 20px 10px;
+}
+
+.card {
+    padding: 2px;
+    margin: 10px;
+    max-width: 200px;
+    margin-left: 10px;
+    font-family: sans-serif;
+}
+
+.buttons {
+    display: table-cell;
+    max-width: 600px;
+  }
