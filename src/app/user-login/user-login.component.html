@@ -1,1 +1,13 @@
-<p>user-login works!</p>
+<div class="parent">
+    <div class="user-login">
+        <h1>User Login</h1>
+        <form #user="ngForm" [formGroup]="userLoginFormGroup" (ngSubmit)="userLogin()" class="common-form">
+            <input formControlName="email" type="text" class="form-input" placeholder="Enter Email" />
+            <input formControlName="password" type="password" class="form-input" placeholder="Enter Password" />
+            <button class="form-button" type="submit">Login</button>
+        </form>
+        <div class="example-button-row">
+            <button mat-raised-button color="primary" routerLink="/user-registration">Register</button>
+        </div>
+    </div>
+</div>
