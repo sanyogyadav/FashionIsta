@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AdminAuthComponent } from './admin-auth/admin-auth.component';
-import { UserRegistrationComponent } from './user-registration/user-registration.component';
-import { UserLoginComponent } from './user-login/user-login.component';
+import { HomeComponent } from './components/home/home.component';
+import { AdminAuthComponent } from './components/admin-auth/admin-auth.component';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ProductsComponent } from './components/products/products.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
     component: UserLoginComponent,
     path: 'user-login'
   },
+  {
+    component: AboutUsComponent,
+    path: 'about-us'
+  },
+  {
+    component: ProductsComponent,
+    path: 'products-list'
+  }
 ];
 
 @NgModule({

@@ -3,18 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { AdminAuthComponent } from './admin-auth/admin-auth.component';
-import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { AdminAuthComponent } from './components/admin-auth/admin-auth.component';
+import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material/button';
-import { ProductsComponent } from './products/products.component';
-import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { ProductsComponent } from './components/products/products.component';
+import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { HttpClientModule } from '@angular/common/http';
-import { UserLoginComponent } from './user-login/user-login.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { FooterComponent } from './components/footer/footer.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { UserLoginComponent } from './user-login/user-login.component';
     HomeComponent,
     ProductsComponent,
     UserRegistrationComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    AboutUsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
