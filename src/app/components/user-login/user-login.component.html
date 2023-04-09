@@ -1,0 +1,43 @@
+<!-- <div class="parent">
+    <div class="user-login">
+        <h1>User Login</h1>
+        <form #user="ngForm" [formGroup]="userLoginFormGroup" (ngSubmit)="userLogin()" class="common-form">
+            <input formControlName="email" type="text" class="form-input" placeholder="Enter Email" />
+            <input formControlName="password" type="password" class="form-input" placeholder="Enter Password" />
+            <button class="form-button" type="submit">Login</button>
+        </form>
+        <div class="example-button-row">
+            <button mat-raised-button color="primary" routerLink="/user-registration">Register</button>
+        </div>
+    </div>
+</div> -->
+
+<div class="parent" fxLayout="column" fxLayoutAlign="center center">
+    <div class="child" ngClass.md="child-md" ngClass.sm="child-sm" ngClass.xs="child-xs" fxLayout="column"
+        fxLayoutAlign="center center">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div fxLayout="column" fxLayoutAlign="space-around center">
+                <h1>Log in</h1>
+                <div class="forminput">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput formControlName="email">
+                        <mat-error>Enter your email</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="forminput">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="pass">
+                        <mat-error>Enter your password</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="loginbutton" fxLayout="row" fxLayoutAlign="space-between end">
+                    <div id="createbutton">
+                        <button mat-raised-button color="primary" routerLink="/login">Login</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

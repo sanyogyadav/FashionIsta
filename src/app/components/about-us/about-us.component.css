@@ -1,0 +1,23 @@
+.parent {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgb(227, 211, 243);
+}
+
+.logo {
+    height: 350px;
+}
+
+h2 {
+    padding-top: 20px;
+}
+
+pre {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.icons {
+    width: 25px;
+    height: 25px;
+    margin-left: 15px;
+}
