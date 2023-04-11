@@ -13,11 +13,10 @@
 </div> -->
 
 <div class="parent" fxLayout="column" fxLayoutAlign="center center">
-    <div class="child" ngClass.md="child-md" ngClass.sm="child-sm" ngClass.xs="child-xs" fxLayout="column"
-        fxLayoutAlign="center center">
+    <div class="child" fxLayout="column" fxLayoutAlign="center center">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div fxLayout="column" fxLayoutAlign="space-around center">
-                <h1>Log in</h1>
+                <h1>Welcome Back !</h1>
                 <div class="forminput">
                     <mat-form-field appearance="outline">
                         <mat-label>Email</mat-label>
@@ -32,10 +31,8 @@
                         <mat-error>Enter your password</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="loginbutton" fxLayout="row" fxLayoutAlign="space-between end">
-                    <div id="createbutton">
-                        <button mat-raised-button color="primary" routerLink="/login">Login</button>
-                    </div>
+                <div class="loginbutton">
+                    <button mat-raised-button type="submit" color="primary" routerLink="">Login</button>
                 </div>
             </div>
         </form>

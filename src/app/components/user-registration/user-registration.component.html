@@ -1,4 +1,4 @@
-<div class="parent">
+<!-- <div class="parent">
     <div class="user-reg">
         <h1>User Registration</h1>
         <form #user="ngForm" [formGroup]="userRegistrationFormGroup" (ngSubmit)="userRegister()" class="common-form">
@@ -10,5 +10,43 @@
         <div class="example-button-row">
             <button mat-raised-button color="primary" routerLink="/user-login">LogIn</button>
         </div>
+    </div>
+</div> -->
+
+<div class="parent" fxLayout="column" fxLayoutAlign="center center">
+    <div class="child" fxLayout="column" fxLayoutAlign="center center">
+        <form>
+            <div fxLayout="column" fxLayoutAlign="space-around center">
+                <h1>Signup</h1>
+                <div class="forminput">
+                    <mat-form-field appearance="outline">
+                        <mat-label>UserName</mat-label>
+                        <input type="text" matInput >
+                        <mat-error>Enter your username</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="forminput">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput>
+                        <mat-error>Enter your email</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="forminput">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput>
+                        <mat-error>Enter your password</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="registerbutton">
+                    <button mat-raised-button type="submit" color="primary" routerLink="">REGISTER</button>
+                </div>
+                <div class="loginbutton" fxLayout="column" fxLayoutAlign="space-between center">
+                    <h3>Already have an account ?</h3>
+                    <button mat-raised-button color="primary" type="button" routerLink="/user-login">Login</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

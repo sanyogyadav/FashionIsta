@@ -18,6 +18,8 @@ import { UserLoginComponent } from './components/user-login/user-login.component
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

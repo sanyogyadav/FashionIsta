@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiServiceService } from '../../services/api/api-service.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -11,7 +12,7 @@ export class UserLoginComponent implements OnInit {
 
   loginForm !: FormGroup;
 
-  constructor(private fb:FormBuilder, private router:Router) { }
+  constructor(private fb: FormBuilder, private api: ApiServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -20,20 +21,19 @@ export class UserLoginComponent implements OnInit {
     })
   }
 
-  onSubmit(){
-    if(this.loginForm.valid){
+  onSubmit() {
+    console.log("submitted")
+    if (this.loginForm.valid) {
       console.log("Valid data", this.loginForm.value);
-      let data = {
-        email: this.loginForm.value.email,
-        password: this.loginForm.value.pass,
-        service: this.loginForm.value.service
-      }
-      this.user.login(data).subscribe((result:any)=>{console.log(result);
-      localStorage.setItem('token', result.id);
-      this.router.navigateByUrl('/dashboard/notes');
-      })
+      let email = this.loginForm.value.email
+      let password = this.loginForm.value.pass
+
+      this.api.login(email, password).subscribe((result: any) => {
+          localStorage.setItem('token', result.user._id);
+          this.router.navigateByUrl('products-list');
+          })
     }
-    else{
+    else {
       console.log("Invalid data", this.loginForm.value);
     }
   }
