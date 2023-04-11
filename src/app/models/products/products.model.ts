@@ -1,4 +1,4 @@
-export class Products {
+export class Product {
     _id!: string;
     product_type!: string;
     brand_name!: string;
