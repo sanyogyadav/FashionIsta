@@ -9,12 +9,19 @@
         SUMMER FASHION
     </h2>
     <ul>
-        <li><a routerLink="admin-auth">Admin</a></li>
+        <!-- <li><a routerLink="admin-auth">Admin</a></li> -->
         <li><a routerLink="">Home</a></li>
         <li><a routerLink="products-list">Products</a></li>
-        <li><a routerLink="user-registration">Register</a></li>
+        <!-- <li><a routerLink="user-registration">Register</a></li> -->
         <li><a routerLink="about-us">AboutUs</a></li>
-        <li><a routerLink="">WishList</a></li>
-        <li><a href="#">Cart(0)</a></li>
+        <li><img src="../../../assets/user.png" [matMenuTriggerFor]="menu">
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink="admin-auth">Admin</button>
+                <button mat-menu-item routerLink="user-login">Login</button>
+                <button mat-menu-item routerLink="user-registration">Register</button>
+              </mat-menu>
+        </li>
+        <li><img src="../../../assets/wishlist.png"></li>
+        <li><img src="../../../assets/shopping-cart-add.png"></li>
     </ul>
 </nav>
