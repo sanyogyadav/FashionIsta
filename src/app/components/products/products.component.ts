@@ -43,10 +43,10 @@ export class ProductsComponent implements OnInit {
     }
   }
 
-  addToWishlist(user_id: string, product_id: string) {
+  addToWishlist(product_id: string) {
     if (this.isLogedIn) {
-      this.userID = this.loggedin.getUserId();
-      this.api.addToWishList(user_id, product_id).subscribe(result => {
+      // this.userID = this.loggedin.getUserId();
+      this.api.addToWishList(this.userID, product_id).subscribe(result => {
         console.log(result);
       });
     } else

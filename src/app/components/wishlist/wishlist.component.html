@@ -1,1 +1,25 @@
-<p>wishlist works!</p>
+<div class="parent" fxLayout="column" fxLayoutAlign="space-around center" *ngIf="products.length!=0">
+    <div class="child" fxLayout="column" fxLayoutAlign="space-around center" *ngFor="let product of products">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>{{ product.product_type }}</mat-card-title>
+            <mat-card-subtitle>{{ product.brand_name }}</mat-card-subtitle>
+            <img mat-card-sm-image src="{{ product.image }}">
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{ product.description }}
+          </p>
+          <p>
+            {{ product.price }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions class="buttons">
+          <button mat-button color="primary" (click)="deleteFromWishlist(userID,product._id)">Delete</button>
+          <button mat-button color="accent">Checkout</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>

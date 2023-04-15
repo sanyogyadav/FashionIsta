@@ -91,6 +91,7 @@ export class ApiServiceService {
   //wish-list
 
   getWishList(id: string): Observable<Product[]> {
+    console.log(id,"This is id")
     return this.http.get<Product[]>(`${this.url}/wish-list/${id}`);
   }
 

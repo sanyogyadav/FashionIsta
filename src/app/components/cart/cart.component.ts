@@ -41,14 +41,4 @@ export class CartComponent implements OnInit {
       window.location.reload();
     })
   }
-
-  emptyCart() {
-    console.log("hii")
-    this.api.emptyCart(this.userID).subscribe(result => {
-      console.log(result,"result");
-      this.products = []
-      // console.log(this.products.length);
-    })
-    // window.location.reload();
-  }
 }

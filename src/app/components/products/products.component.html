@@ -19,10 +19,12 @@
                 </mat-card-content>
                 <mat-card-actions class="buttons">
                     <button mat-button color="primary" (click)="addToCart(product._id)">Add to Cart</button>
-                    <button mat-button color="accent" routerLink="/wishlist">Wishlist</button>
+                    <button mat-button color="accent" (click)="addToWishlist(product._id)">Wishlist</button>
                 </mat-card-actions>
             </mat-card>
         </div>
+    </div>
+</div>
         <!-- <div class="sub-child">
             <mat-card class="card">
                 <mat-card-header>
@@ -103,9 +105,6 @@
                 </mat-card-actions>
             </mat-card>
         </div> -->
-    </div>
-</div>
-
 <!-- <div class="parent">
     <div class="child" *ngFor="let product of products">
         <mat-card class="example-card">
