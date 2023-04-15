@@ -6,6 +6,8 @@ import { UserRegistrationComponent } from './components/user-registration/user-r
 import { UserLoginComponent } from './components/user-login/user-login.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ProductsComponent } from './components/products/products.component';
+import { CartComponent } from './components/cart/cart.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 const routes: Routes = [
   {
@@ -31,7 +33,15 @@ const routes: Routes = [
   {
     component: ProductsComponent,
     path: 'products-list'
-  }
+  },
+  {
+    component: CartComponent,
+    path: 'cart'
+  },
+  {
+    component: WishlistComponent,
+    path: 'wishlist'
+  },
 ];
 
 @NgModule({

@@ -6,11 +6,11 @@ import { Injectable } from '@angular/core';
 export class LoggedinServiceService {
 
   token!: string;
-  user!: string;
+  userId!: string;
 
   constructor() {
-    this.token = localStorage.getItem('Token') || ''
-    this.user = localStorage.getItem('User') || ''
+    this.token = localStorage.getItem('token') || ''
+    this.userId = localStorage.getItem('userid') || ''
   }
 
   isLogedIn(): boolean {
@@ -27,14 +27,14 @@ export class LoggedinServiceService {
   }
 
   getUserId(): string {
-    return this.user;
+    return this.userId;
   }
 
   logOut():void {
-    localStorage.removeItem('Token')
-    localStorage.removeItem('User')
+    localStorage.removeItem('token')
+    localStorage.removeItem('userid')
     this.token = ''
-    this.user = ''
+    this.userId = ''
     window.location.reload();
   }
 }

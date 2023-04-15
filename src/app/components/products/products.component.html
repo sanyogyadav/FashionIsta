@@ -1,26 +1,29 @@
-<div class="parent">
-    <div fxLayout="row" fxLayoutAlign="space-evenly center" class="child">
+<div class="parent" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+    <div fxLayout="row" fxLayoutAlign="space-evenly center" class="child" *ngFor="let product of products">
         <div class="sub-child">
             <mat-card class="card">
                 <mat-card-header>
-                    <mat-card-title>Shirt</mat-card-title>
-                    <mat-card-subtitle>Allen Solly</mat-card-subtitle>
+                    <mat-card-title>{{ product.product_type }}</mat-card-title>
+                    <mat-card-subtitle>{{ product.brand_name }}</mat-card-subtitle>
                 </mat-card-header>
                 <img mat-card-image
-                    src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61FojZZPnBS._UL1500_.jpg"
+                    src="{{ product.image }}"
                     alt="Allen Solly Full Sleeve Shirt">
                 <mat-card-content>
                     <p>
-                        Allen Solly Men's Regular Fit Shirt
+                        {{ product.description }}
+                    </p>
+                    <p>
+                        {{ product.price }}
                     </p>
                 </mat-card-content>
                 <mat-card-actions class="buttons">
-                    <button mat-button color="primary">Add to Cart</button>
-                    <button mat-button color="accent">Wishlist</button>
+                    <button mat-button color="primary" (click)="addToCart(product._id)">Add to Cart</button>
+                    <button mat-button color="accent" routerLink="/wishlist">Wishlist</button>
                 </mat-card-actions>
             </mat-card>
         </div>
-        <div class="sub-child">
+        <!-- <div class="sub-child">
             <mat-card class="card">
                 <mat-card-header>
                     <mat-card-title>Jeans</mat-card-title>
@@ -99,6 +102,26 @@
                     <button mat-button color="accent">Wishlist</button>
                 </mat-card-actions>
             </mat-card>
-        </div>
+        </div> -->
     </div>
 </div>
+
+<!-- <div class="parent">
+    <div class="child" *ngFor="let product of products">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>{{ product.product_type }}</mat-card-title>
+              <mat-card-subtitle>{{ product.brand_name }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{ product.image }}" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>
+                {{ product.description }}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <p>{{ product.price }}</p>
+            </mat-card-actions>
+          </mat-card> 
+    </div>
+</div> -->

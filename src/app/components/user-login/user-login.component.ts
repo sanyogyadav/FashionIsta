@@ -22,14 +22,13 @@ export class UserLoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("submitted")
     if (this.loginForm.valid) {
-      console.log("Valid data", this.loginForm.value);
       let email = this.loginForm.value.email
       let password = this.loginForm.value.pass
 
-      this.api.login(email, password).subscribe((result: any) => {
-          localStorage.setItem('token', result.user._id);
+      this.api.login(email, password).subscribe(result => {
+          localStorage.setItem('token', result.token);
+          localStorage.setItem('userid', result.user._id);
           this.router.navigateByUrl('products-list');
           })
     }

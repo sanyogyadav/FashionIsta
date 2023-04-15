@@ -20,6 +20,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
+import { CartComponent } from './components/cart/cart.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {MatMenuModule} from '@angular/material/menu';
     UserRegistrationComponent,
     UserLoginComponent,
     AboutUsComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent,
+    WishlistComponent,
   ],
   imports: [
     BrowserModule,
