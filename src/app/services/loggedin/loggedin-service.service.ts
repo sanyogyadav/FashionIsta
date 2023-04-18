@@ -30,11 +30,11 @@ export class LoggedinServiceService {
     return this.userId;
   }
 
-  logOut():void {
+  logOut(): any {
     localStorage.removeItem('token')
     localStorage.removeItem('userid')
+    localStorage.removeItem('AdminToken')
     this.token = ''
     this.userId = ''
-    window.location.reload();
   }
 }

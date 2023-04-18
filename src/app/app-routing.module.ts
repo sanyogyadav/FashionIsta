@@ -8,6 +8,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
     component: WishlistComponent,
     path: 'wishlist'
   },
+  {
+    component: AdminLayoutComponent,
+    path: 'admin-layout'
+  }
 ];
 
 @NgModule({

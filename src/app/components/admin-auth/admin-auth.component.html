@@ -1,11 +1,27 @@
-<div class="admin-auth">
-    <div class="sign-up">
-        <h1>Admin Login</h1>
-        <form #admin="ngForm" (ngSubmit)="signUp(admin.value)" class="common-form">
-            <input type="text" class="form-input" placeholder="Enter Name" name="username" ngModel />
-            <input type="text" class="form-input" placeholder="Enter Email" name="email" ngModel />
-            <input type="password" class="form-input" placeholder="Enter Password" name="password" ngModel />
-            <button class="form-button" type="submit">Login</button>
+<div class="parent" fxLayout="column" fxLayoutAlign="center center">
+    <div class="child" fxLayout="column" fxLayoutAlign="center center">
+        <form [formGroup]="adminForm" (ngSubmit)="adminSubmit()">
+            <div fxLayout="column" fxLayoutAlign="space-around center">
+                <h1>Welcome Back !</h1>
+                <div class="forminput">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput formControlName="email">
+                        <mat-error>Enter admin email credentials</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="forminput">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput formControlName="pass">
+                        <mat-error>Enter your password</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="loginbutton">
+                    <button mat-raised-button type="submit" color="primary">Login</button>
+                </div>
+                <mat-error>{{ message }}</mat-error>
+            </div>
         </form>
     </div>
 </div>

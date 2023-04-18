@@ -72,19 +72,23 @@ export class ApiServiceService {
     return this.http.delete<Product>(`${this.url}/product/${id}`);
   }
 
-  addNewProduct(type: string, brand: string, desc: string): Observable<Product> {
+  addNewProduct(type: string, brand: string, desc: string, image: string, price: number): Observable<Product> {
     return this.http.post<Product>(`${this.url}/product`, {
       product_type: type,
       brand_name: brand,
       description: desc,
+      image: image,
+      price: price,
     })
   }
 
-  editProduct(id: string, type: string, brand: string, desc: string): Observable<Product> {
-    return this.http.post<Product>(`${this.url}/product/${id}`, {
+  editProduct(id: string, type: string, brand: string, desc: string, image: string, price: number): Observable<Product> {
+    return this.http.patch<Product>(`${this.url}/product/${id}`, {
       product_type: type,
       brand_name: brand,
       description: desc,
+      image: image,
+      price: price,
     })
   }
 

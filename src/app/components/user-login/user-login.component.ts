@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class UserLoginComponent implements OnInit {
 
   loginForm !: FormGroup;
+  message : string = '';
 
   constructor(private fb: FormBuilder, private api: ApiServiceService, private router: Router) { }
 
@@ -34,6 +35,7 @@ export class UserLoginComponent implements OnInit {
     }
     else {
       console.log("Invalid data", this.loginForm.value);
+      this.message = 'Email or password wrong!!'
     }
   }
 }

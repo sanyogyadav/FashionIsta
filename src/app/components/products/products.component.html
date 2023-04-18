@@ -1,3 +1,4 @@
+<!-- Users View -->
 <div class="parent" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
     <div fxLayout="row" fxLayoutAlign="space-evenly center" class="child" *ngFor="let product of products">
         <div class="sub-child">
@@ -6,9 +7,7 @@
                     <mat-card-title>{{ product.product_type }}</mat-card-title>
                     <mat-card-subtitle>{{ product.brand_name }}</mat-card-subtitle>
                 </mat-card-header>
-                <img mat-card-image
-                    src="{{ product.image }}"
-                    alt="Allen Solly Full Sleeve Shirt">
+                <img mat-card-image src="{{ product.image }}" alt="Allen Solly Full Sleeve Shirt">
                 <mat-card-content>
                     <p>
                         {{ product.description }}
@@ -25,102 +24,3 @@
         </div>
     </div>
 </div>
-        <!-- <div class="sub-child">
-            <mat-card class="card">
-                <mat-card-header>
-                    <mat-card-title>Jeans</mat-card-title>
-                    <mat-card-subtitle>Vero Moda</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image
-                    src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/81+y7t3ZCmL._UL1500_.jpg"
-                    alt="Vero Moda Women's Regular Jeans (204519102_Medium Blue Denim_27)">
-                <mat-card-content>
-                    <p>
-                        Vero Moda Women's Regular Jeans (204519102_Medium Blue Denim_27)
-                    </p>
-                </mat-card-content>
-                <mat-card-actions class="buttons">
-                    <button mat-button color="primary">Add to Cart</button>
-                    <button mat-button color="accent">Wishlist</button>
-                </mat-card-actions>
-            </mat-card>
-        </div>
-        <div class="sub-child">
-            <mat-card class="card">
-                <mat-card-header>
-                    <mat-card-title>Saree</mat-card-title>
-                    <mat-card-subtitle>StyleFables</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image
-                    src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/61nl01zqc0L._UL1500_.jpg"
-                    alt="StyleFables sarees">
-                <mat-card-content>
-                    <p>
-                        STYLEFABLES Women's Jacquard Blue Silk Saree (ANK-SR-705_Blue)
-                    </p>
-                </mat-card-content>
-                <mat-card-actions class="buttons">
-                    <button mat-button color="primary">Add to Cart</button>
-                    <button mat-button color="accent">Wishlist</button>
-                </mat-card-actions>
-            </mat-card>
-        </div>
-        <div class="sub-child">
-            <mat-card class="card">
-                <mat-card-header>
-                    <mat-card-title>Mobiles</mat-card-title>
-                    <mat-card-subtitle>Samsung</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image
-                    src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/41CkKbseMGL._SX300_SY300_QL70_FMwebp_.jpg"
-                    alt="Samsung Galaxy S20 FE 5G (Cloud Mint,8GB RAM,128GB Storage)">
-                <mat-card-content>
-                    <p>
-                        Samsung Galaxy S20 FE 5G (Cloud Mint,8GB RAM,128GB Storage)
-                    </p>
-                </mat-card-content>
-                <mat-card-actions class="buttons">
-                    <button mat-button color="primary">Add to Cart</button>
-                    <button mat-button color="accent">Wishlist</button>
-                </mat-card-actions>
-            </mat-card>
-        </div>
-        <div class="sub-child">
-            <mat-card class="card">
-                <mat-card-header>
-                    <mat-card-title>Jacket</mat-card-title>
-                    <mat-card-subtitle>Drobe</mat-card-subtitle>
-                </mat-card-header>
-                <img mat-card-image
-                    src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/21o7a7-2zpL.jpg"
-                    alt="DROBE Zippers for Men Women / Jacket for Man Women.">
-                <mat-card-content>
-                    <p>
-                        DROBE Zippers for Men Women / Jacket for Man Women.
-                    </p>
-                </mat-card-content>
-                <mat-card-actions class="buttons">
-                    <button mat-button color="primary">Add to Cart</button>
-                    <button mat-button color="accent">Wishlist</button>
-                </mat-card-actions>
-            </mat-card>
-        </div> -->
-<!-- <div class="parent">
-    <div class="child" *ngFor="let product of products">
-        <mat-card class="example-card">
-            <mat-card-header>
-              <mat-card-title>{{ product.product_type }}</mat-card-title>
-              <mat-card-subtitle>{{ product.brand_name }}</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="{{ product.image }}" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-              <p>
-                {{ product.description }}
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-                <p>{{ product.price }}</p>
-            </mat-card-actions>
-          </mat-card> 
-    </div>
-</div> -->

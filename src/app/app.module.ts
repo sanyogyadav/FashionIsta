@@ -22,6 +22,8 @@ import { MatInputModule } from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     FooterComponent,
     CartComponent,
     WishlistComponent,
+    AdminLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
