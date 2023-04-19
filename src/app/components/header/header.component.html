@@ -16,11 +16,11 @@
         <li><a routerLink="about-us">AboutUs</a></li>
         <li><img src="../../../assets/user.png" [matMenuTriggerFor]="menu">
             <mat-menu #menu="matMenu">
-                <button mat-menu-item routerLink="admin-auth">Admin</button>
-                <button mat-menu-item routerLink="user-login">Login</button>
-                <button mat-menu-item routerLink="user-registration">Register</button>
+                <button mat-menu-item routerLink="/admin-auth">Admin</button>
+                <button mat-menu-item routerLink="/user-login">Login</button>
+                <button mat-menu-item routerLink="/user-registration">Register</button>
                 <button mat-menu-item routerLink="" (click)="logout()">Logout</button>
-              </mat-menu>
+            </mat-menu>
         </li>
         <li><img src="../../../assets/wishlist.png" routerLink="/wishlist"></li>
         <li><img src="../../../assets/shopping-cart-add.png" routerLink="/cart"></li>

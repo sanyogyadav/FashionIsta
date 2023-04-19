@@ -24,6 +24,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     CartComponent,
     WishlistComponent,
     AdminLayoutComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

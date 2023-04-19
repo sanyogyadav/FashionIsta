@@ -15,6 +15,7 @@ export class LoggedinServiceService {
 
   isLogedIn(): boolean {
     if (this.token) {
+      console.log(this.token, this.userId);
       return true;
     }
     else {

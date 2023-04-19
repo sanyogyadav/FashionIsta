@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiServiceService } from 'src/app/services/api/api-service.service'; 
 import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user-registration',
@@ -11,8 +12,9 @@ import { Router } from '@angular/router';
 export class UserRegistrationComponent implements OnInit {
 
   registerForm !: FormGroup
+  message : string = '';
 
-  constructor(private fb: FormBuilder, private api: ApiServiceService, private router: Router) { }
+  constructor(private _snackbar: MatSnackBar, private fb: FormBuilder, private api: ApiServiceService, private router: Router) { }
 
   ngOnInit(): void {
     console.log("hi");
@@ -36,9 +38,12 @@ export class UserRegistrationComponent implements OnInit {
         this.router.navigateByUrl('');
         console.log("After checking");
       })
+      this.message = 'Register Sucessfully!!'
     }
     else {
       console.log("Invalid data", this.registerForm.value);
+      this.message = 'Invalid Data!!'
     }
+    this._snackbar.open(this.message,"ok")
   }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LoggedinServiceService } from 'src/app/services/loggedin/loggedin-service.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,11 +8,9 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit{
 
-  constructor(private logedin: LoggedinServiceService, private router: Router) {}
+  constructor(private logedin: LoggedinServiceService) {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
 
   logout() {
     this.logedin.logOut();

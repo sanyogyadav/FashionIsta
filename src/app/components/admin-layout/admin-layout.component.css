@@ -11,14 +11,36 @@
   width: 400px;
 }
 
+.deleteuser-large-box {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  padding: 10px;
+}
+
 .edit-large-box {
   height: 300px;
   width: 400px;
 }
 
 .user-large-box {
+  height: 400px;
+  width: 400px;
+}
+
+.deleteuser-large-box {
   height: 200px;
   width: 400px;
+}
+
+.user-card {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  height: 70%;
+  width: 100%;
+}
+
+mat-card-title {
+  margin-left: 15px;
 }
 
 .add_users {
@@ -28,4 +50,8 @@
 .delete_users {
   float: right;
   margin-right: 15px; 
+}
+
+.user-delete-buttons {
+  align-self: flex-end;
 }

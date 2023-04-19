@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiServiceService } from '../../services/api/api-service.service'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-user-login',
@@ -13,7 +14,7 @@ export class UserLoginComponent implements OnInit {
   loginForm !: FormGroup;
   message : string = '';
 
-  constructor(private fb: FormBuilder, private api: ApiServiceService, private router: Router) { }
+  constructor(private _snackbar: MatSnackBar, private fb: FormBuilder, private api: ApiServiceService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -32,10 +33,12 @@ export class UserLoginComponent implements OnInit {
           localStorage.setItem('userid', result.user._id);
           this.router.navigateByUrl('products-list');
           })
+          this.message = 'Login Successfully!!'
     }
     else {
       console.log("Invalid data", this.loginForm.value);
       this.message = 'Email or password wrong!!'
     }
+    this._snackbar.open(this.message,"ok")
   }
 }

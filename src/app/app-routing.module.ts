@@ -9,6 +9,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     component: AdminLayoutComponent,
     path: 'admin-layout'
+  },
+  {
+    component: CheckoutComponent,
+    path: 'checkout'
   }
 ];
 

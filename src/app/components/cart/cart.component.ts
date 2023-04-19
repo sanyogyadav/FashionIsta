@@ -27,7 +27,6 @@ export class CartComponent implements OnInit {
       this.api.getCart(this.userID).subscribe((result:Product[]) => {
         this.products = result
       console.log(this.userID,this.products.length,"just checking")
-
       })
     }
       else{

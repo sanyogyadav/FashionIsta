@@ -19,6 +19,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
 
+    // this.userID = this.loggedin.getUserId();
     this.api.getAllProducts().subscribe((result: Product[]) => {
       console.log(result)
       this.products = result;
@@ -26,6 +27,7 @@ export class ProductsComponent implements OnInit {
     })
 
     this.isLogedIn = this.loggedin.isLogedIn();
+    console.log(this.isLogedIn);
     if (this.isLogedIn) {
       this.userID = this.loggedin.getUserId();
       console.log(this.userID);
@@ -45,7 +47,7 @@ export class ProductsComponent implements OnInit {
 
   addToWishlist(product_id: string) {
     if (this.isLogedIn) {
-      // this.userID = this.loggedin.getUserId();
+      this.userID = this.loggedin.getUserId();
       this.api.addToWishList(this.userID, product_id).subscribe(result => {
         console.log(result);
       });

@@ -97,23 +97,19 @@
                 </div>
             </mat-tab>
             <!-- Users -->
-            <mat-tab label="User">
+            <mat-tab label="Users">
                 <p>{{ message }}</p>
                 <button class="add_users" mat-raised-button color="primary" (click)="addUserCheck()">Add</button>
                 <button class="delete_users" mat-raised-button color="primary"
                     (click)="deleteUserCheck()">Delete</button>
                 <div *ngIf="!userKey">
-                    <div *ngFor="let user of users" class="user-large-box mat-elevation-z4" fxLayout="column"
+                    <div *ngFor="let user of users" class="deleteuser-large-box mat-elevation-z4" fxLayout="column"
                         fxLayoutAlign="space-evenly center">
-                        <mat-card class="example-card">
-
-                                <mat-card-title>UserName</mat-card-title>
-                                <mat-card-subtitle>{{ user.username }}</mat-card-subtitle>
-                                <mat-card-title>Email</mat-card-title>
-                                <mat-card-title>{{ user.email }}</mat-card-title>
-
-                            <mat-card-actions class="buttons">
-                                <button mat-raised-button color="primary" (click)="deleteUser(user._id)">Delete</button>
+                        <mat-card class="user-card">
+                                <mat-card-title>Username : {{ user.username }}</mat-card-title>
+                                <mat-card-title>Email : {{ user.email }}</mat-card-title>
+                            <mat-card-actions class="user-delete-buttons">
+                                <button mat-button color="accent" (click)="deleteUser(user._id)">Delete</button>
                             </mat-card-actions>
                         </mat-card>
                     </div>

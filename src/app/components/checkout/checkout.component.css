@@ -1,0 +1,22 @@
+.parent{
+    background-color: rgba(127, 255, 212, 0.351);
+    margin-top: 50px;
+}
+
+.fashion-image {
+    width: 75%;
+    rotate: 10deg;
+}
+
+h1 {
+    font-family: Century Gothic;
+}
+
+p {
+    font-family: MV Boli;
+    font-size: 20px;
+}
+
+button {
+    margin-top: 10px;
+}
