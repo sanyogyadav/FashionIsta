@@ -3,6 +3,7 @@ import { ApiServiceService } from 'src/app/services/api/api-service.service';
 import { LoggedinServiceService } from 'src/app/services/loggedin/loggedin-service.service';
 import { Product } from 'src/app/models/products/products.model';
 import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-wishlist',
@@ -15,7 +16,7 @@ export class WishlistComponent implements OnInit {
   userID: string ='';
   isLogedIn: boolean = false;
 
-  constructor(private api: ApiServiceService, private router: Router, private loggedin : LoggedinServiceService) { }
+  constructor(private _snackbar: MatSnackBar, private api: ApiServiceService, private router: Router, private loggedin : LoggedinServiceService) { }
 
   ngOnInit(): void {
     this.isLogedIn = this.loggedin.isLogedIn();
@@ -35,9 +36,9 @@ export class WishlistComponent implements OnInit {
 
   deleteFromWishlist(userid : string, productid : string) {
     this.api.deleteFromWishList(userid,productid).subscribe((result : any) => {
+      this._snackbar.open(result["message"],"ok")
       // console.log(result);
-      window.location.reload();
+      this.ngOnInit();
     })
   }
-
 }

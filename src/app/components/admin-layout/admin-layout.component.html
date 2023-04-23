@@ -33,11 +33,9 @@
                         <button mat-raised-button color="primary">Add</button>
                     </div>
                 </form>
-                <p>{{ message }}</p>
             </mat-tab>
             <!-- Edit Products -->
             <mat-tab label="Edit Products">
-                <p>{{ message }}</p>
                 <div *ngIf="!updateKey">
                     <div class="edit-large-box mat-elevation-z4" fxLayout="row" fxLayoutAlign="center center"
                         *ngFor="let product of products">
@@ -54,7 +52,7 @@
                                     {{ product.description }}
                                 </p>
                                 <p>
-                                    {{ product.price }}
+                                    ${{ product.price }}
                                 </p>
                             </mat-card-content>
                             <mat-card-actions class="buttons">
@@ -98,7 +96,6 @@
             </mat-tab>
             <!-- Users -->
             <mat-tab label="Users">
-                <p>{{ message }}</p>
                 <button class="add_users" mat-raised-button color="primary" (click)="addUserCheck()">Add</button>
                 <button class="delete_users" mat-raised-button color="primary"
                     (click)="deleteUserCheck()">Delete</button>

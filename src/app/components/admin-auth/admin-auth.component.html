@@ -6,7 +6,7 @@
                 <div class="forminput">
                     <mat-form-field appearance="outline">
                         <mat-label>Email</mat-label>
-                        <input type="email" matInput formControlName="email" autofocus>
+                        <input type="email" matInput formControlName="email">
                         <mat-error>Enter admin email credentials</mat-error>
                     </mat-form-field>
                 </div>
@@ -20,7 +20,6 @@
                 <div class="loginbutton">
                     <button mat-raised-button type="submit" color="primary">Login</button>
                 </div>
-                <mat-error>{{ message }}</mat-error>
             </div>
         </form>
     </div>

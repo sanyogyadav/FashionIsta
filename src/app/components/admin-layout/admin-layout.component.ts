@@ -4,6 +4,7 @@ import { LoggedinServiceService } from 'src/app/services/loggedin/loggedin-servi
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Product } from 'src/app/models/products/products.model';
 import { User } from 'src/app/models/users/user.model';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-admin-layout',
@@ -21,7 +22,7 @@ export class AdminLayoutComponent implements OnInit {
   userKey: string = '';
   productObj: Product = new Product;
 
-  constructor(private fb: FormBuilder, private api: ApiServiceService, private logedin: LoggedinServiceService) { }
+  constructor(private _snackbar: MatSnackBar, private fb: FormBuilder, private api: ApiServiceService, private logedin: LoggedinServiceService) { }
 
   ngOnInit(): void {
     this.updateKey = '';
@@ -60,22 +61,20 @@ export class AdminLayoutComponent implements OnInit {
       let pprice = this.addition.value.pprice
 
       this.api.addNewProduct(ptype, bname, pdescription, purl, pprice).subscribe(result => {
-        this.message = "Product Added Successfully!!";
+        this._snackbar.open("Product Added Successfully!!","ok");
         console.log(result);
+        this.ngOnInit();
       })
-      this.addition.reset(this.addition);
     }
     else {
-      console.log("Invalid Data");
-      this.message = "Invalid Product Details...";
+      this._snackbar.open("Invalid Product Details...","ok");
     }
   }
 
   deleteProduct(product_id: string) {
     this.api.deleteProductById(product_id).subscribe((result: any) => {
-      console.log(result, "Calling delete");
-      window.location.reload();
-      this.message = "Product Deleted Successfully";
+      this._snackbar.open("Selected product deleted successfully!!","ok");
+      this.ngOnInit();
     })
   }
 
@@ -87,7 +86,7 @@ export class AdminLayoutComponent implements OnInit {
 
   updateProductSubmit(ptype: string, bname: string,pdescription: string, purl: string, pprice: string ) {
     this.api.editProduct(this.productObj._id, ptype, bname, pdescription, purl, +pprice).subscribe(result => {
-      this.message = "Product Updated Successfully!!";
+      this._snackbar.open("Selected product updated successfully!!","ok");
       this.ngOnInit();
     })
   }
@@ -103,22 +102,18 @@ export class AdminLayoutComponent implements OnInit {
       let pass = this.userAdd.value.pass
 
       this.api.addNewUser(username, email, pass).subscribe(result => {
-        this.message = "User Added Successfully!!";
-        console.log(result);
+        this._snackbar.open("User added successfully!!","ok");
+        this.ngOnInit();
       })
-      this.userAdd.reset(this.userAdd);
     }
     else {
-      console.log("Invalid Data");
-      this.message = "Invalid User Details...";
+      this._snackbar.open("Invalid user credentials","ok");
     }
-    this.ngOnInit();
   }
 
   deleteUser(user_id : string) {
     this.api.deleteUserById(user_id).subscribe((result: any) => {
-      console.log(result, "Calling delete");
-      this.message = "User Deleted Successfully";
+      this._snackbar.open("User deleted successfully","ok");
       this.ngOnInit();
     })
   }
@@ -126,5 +121,4 @@ export class AdminLayoutComponent implements OnInit {
   deleteUserCheck() {
     this.ngOnInit();
   }
-
 }

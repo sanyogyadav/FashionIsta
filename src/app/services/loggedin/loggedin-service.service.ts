@@ -8,12 +8,15 @@ export class LoggedinServiceService {
   token!: string;
   userId!: string;
 
-  constructor() {
+  constructor() { }
+
+  login() {
     this.token = localStorage.getItem('token') || ''
     this.userId = localStorage.getItem('userid') || ''
   }
 
   isLogedIn(): boolean {
+    this.login()
     if (this.token) {
       console.log(this.token, this.userId);
       return true;
@@ -35,7 +38,7 @@ export class LoggedinServiceService {
     localStorage.removeItem('token')
     localStorage.removeItem('userid')
     localStorage.removeItem('AdminToken')
-    this.token = ''
-    this.userId = ''
+    // this.token = ''
+    // this.userId = ''
   }
 }

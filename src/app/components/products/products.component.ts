@@ -3,6 +3,7 @@ import { ApiServiceService } from 'src/app/services/api/api-service.service';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/products/products.model';
 import { LoggedinServiceService } from 'src/app/services/loggedin/loggedin-service.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-products',
@@ -13,32 +14,29 @@ export class ProductsComponent implements OnInit {
 
   products: Product[] = [];
   userID: string = '';
-  isLogedIn: boolean = false;
+  isLogedIn: boolean;
 
-  constructor(private api: ApiServiceService, private router: Router, private loggedin: LoggedinServiceService) { }
+  constructor(private _snackbar: MatSnackBar, private api: ApiServiceService, private router: Router, private loggedin: LoggedinServiceService) { }
 
   ngOnInit(): void {
-
-    // this.userID = this.loggedin.getUserId();
-    this.api.getAllProducts().subscribe((result: Product[]) => {
-      console.log(result)
+      this.api.getAllProducts().subscribe((result: Product[]) => {
       this.products = result;
-      // console.log("hi", this.products)
     })
 
     this.isLogedIn = this.loggedin.isLogedIn();
-    console.log(this.isLogedIn);
-    if (this.isLogedIn) {
+    if(this.isLogedIn) {
+      console.log(this.isLogedIn);
       this.userID = this.loggedin.getUserId();
       console.log(this.userID);
+    }else {
+      console.log("Cannot login");
     }
   }
 
   addToCart(product_id: string) {
     if (this.isLogedIn) {
-      // this.userID = this.loggedin.getUserId();
-      this.api.addToCart(this.userID, product_id).subscribe(result => {
-        console.log("after adding", result);
+      this.api.addToCart(this.userID,product_id).subscribe(result => {
+        this._snackbar.open(result["message"],"Ok");
       });
     } else {
       this.router.navigate(['user-login']);
@@ -47,9 +45,8 @@ export class ProductsComponent implements OnInit {
 
   addToWishlist(product_id: string) {
     if (this.isLogedIn) {
-      this.userID = this.loggedin.getUserId();
       this.api.addToWishList(this.userID, product_id).subscribe(result => {
-        console.log(result);
+        this._snackbar.open(result["message"],"Ok");
       });
     } else
       this.router.navigateByUrl("/user-login");

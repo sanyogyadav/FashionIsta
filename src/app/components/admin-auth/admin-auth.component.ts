@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiServiceService } from 'src/app/services/api/api-service.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-admin-auth',
@@ -13,7 +13,7 @@ export class AdminAuthComponent implements OnInit {
   adminForm !: FormGroup;
   message: string = '';
 
-  constructor(private fb: FormBuilder, private api: ApiServiceService, private router: Router) { }
+  constructor(private _snackbar: MatSnackBar, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.adminForm = this.fb.group({
@@ -30,13 +30,15 @@ export class AdminAuthComponent implements OnInit {
       if (email == 'admin@gmail.com' && password == 'admin@123') {
         localStorage.setItem('AdminToken', email);
         this.router.navigateByUrl('admin-layout');
-    }
+        this._snackbar.open("Login Successfully","ok")
+
+      }
       else {
-        this.message = 'Email or password wrong!!'
+      this._snackbar.open("Invalid Data","ok")
       }
     }
     else {
-      console.log("Invalid data", this.adminForm.value);
+      this._snackbar.open("Invalid Data","ok")
     }
   }
 }

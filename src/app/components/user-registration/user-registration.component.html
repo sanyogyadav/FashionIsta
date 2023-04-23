@@ -1,18 +1,3 @@
-<!-- <div class="parent">
-    <div class="user-reg">
-        <h1>User Registration</h1>
-        <form #user="ngForm" [formGroup]="userRegistrationFormGroup" (ngSubmit)="userRegister()" class="common-form">
-            <input formControlName="username" type="text" class="form-input" placeholder="Enter Name" />
-            <input formControlName="email" type="text" class="form-input" placeholder="Enter Email" />
-            <input formControlName="password" type="password" class="form-input" placeholder="Enter Password" />
-            <button class="form-button" type="submit">Register</button>
-        </form>
-        <div class="example-button-row">
-            <button mat-raised-button color="primary" routerLink="/user-login">LogIn</button>
-        </div>
-    </div>
-</div> -->
-
 <div class="parent" fxLayout="column" fxLayoutAlign="center center">
     <div class="child" fxLayout="column" fxLayoutAlign="center center">
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">

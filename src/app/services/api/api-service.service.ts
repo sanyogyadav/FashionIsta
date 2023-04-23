@@ -132,11 +132,7 @@ export class ApiServiceService {
     });
   }
 
-  // emptyCart(id: string): Observable<Product> {
-  //   return this.http.delete<Product>(`${this.url}/cart/${id}`);
-  // }
-
-  emptyCart(id: string){
-    return this.http.delete(`${this.url}/cart/empty_cart/${id}`);
+  emptyCart(id: string): Observable<Product> {
+    return this.http.delete<Product>(`${this.url}/cart/${id}`);
   }
 }

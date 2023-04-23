@@ -26,6 +26,7 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { LoggedinServiceService } from './services/loggedin/loggedin-service.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     MatTabsModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [LoggedinServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

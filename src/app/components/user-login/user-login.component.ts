@@ -12,7 +12,6 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class UserLoginComponent implements OnInit {
 
   loginForm !: FormGroup;
-  message : string = '';
 
   constructor(private _snackbar: MatSnackBar, private fb: FormBuilder, private api: ApiServiceService, private router: Router) { }
 
@@ -28,17 +27,16 @@ export class UserLoginComponent implements OnInit {
       let email = this.loginForm.value.email
       let password = this.loginForm.value.pass
 
-      this.api.login(email, password).subscribe(result => {
+      this.api.login(email, password).subscribe((result: any) => {
+        this._snackbar.open(result["message"],"ok")
           localStorage.setItem('token', result.token);
           localStorage.setItem('userid', result.user._id);
           this.router.navigateByUrl('products-list');
           })
-          this.message = 'Login Successfully!!'
     }
     else {
       console.log("Invalid data", this.loginForm.value);
-      this.message = 'Email or password wrong!!'
+      this._snackbar.open("Invalid Data","ok")
     }
-    this._snackbar.open(this.message,"ok")
   }
 }
