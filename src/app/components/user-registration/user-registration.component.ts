@@ -34,16 +34,16 @@ export class UserRegistrationComponent implements OnInit {
       let email = this.registerForm.value.email
       let password = this.registerForm.value.pass
 
-      this.api.addNewUser(username, email, password).subscribe((result: any) => {
+      this.api.signup(username, email, password).subscribe((result: any) => {
+        this._snackbar.open(result["message"],"ok")
         this.router.navigateByUrl('');
         console.log("After checking");
       })
-      this.message = 'Register Sucessfully!!'
     }
     else {
       console.log("Invalid data", this.registerForm.value);
-      this.message = 'Invalid Data!!'
     }
-    this._snackbar.open(this.message,"ok")
+      this._snackbar.open("Invalid Data","ok")
+
   }
 }

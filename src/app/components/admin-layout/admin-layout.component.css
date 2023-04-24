@@ -1,6 +1,7 @@
 .add-large-box,
 .edit-large-box,
-.user-large-box {
+.user-large-box,
+.deleteuser-large-box {
   display: flex;
   align-items: center;
   justify-content: center;
