@@ -2,7 +2,8 @@
   "name": "fashion-ista",
   "version": "0.0.0",
   "scripts": {
-    "dev": "nodemon server.js"
+    "start": "ng serve",
+    "build:prod": "ng build --optimization"
   },
   "private": true,
   "dependencies": {
